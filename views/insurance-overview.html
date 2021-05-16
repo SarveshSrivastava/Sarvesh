@@ -1,0 +1,38 @@
+<div ng-controller="insuranceCtrl">
+    <div class="container insuranceHeading">
+        <h1><strong>Financial Protection Made Simple</strong></h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h5>More isn't always better. When it comes to understanding insurance, there are really just
+                    five pieces of
+                    information you should know: What it is, what it covers, what it costs, what it will pay out and
+                    what it
+                    may
+                    exclude.
+                </h5>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container insurance mb-2">
+
+        <div class="row row-cols-1 row-cols-lg-4 g-4">
+            <div class="col" ng-repeat="item in cart">
+                <div class="card h-100 insuranceCard">
+                    <button type="button" class="btn btn-success addRemove" ng-click="addRemoveFromCart(item);toggle=!toggle" ng-model="addRemove"><span ng-switch="item.title"><span ng-switch-when="Accident Insurance"><strong>{{toggle?'Add':'Remove'}}</strong></span><span ng-switch-default><strong>{{toggle?'Remove':'Add'}}</strong></span></span></button>
+                    <div class="card-body">
+                        <h5><strong>{{item.title}}</strong></h5>
+                        <p>{{item.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="goToCartFooter" style="text-align: end;">
+        <button type="button" class="btn btn-primary goToCart" ng-click="goToCart()" style="width: 100%; height: 85%;">Go To Cart</button>
+    </div>
+    
+</div>

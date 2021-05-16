@@ -1,0 +1,509 @@
+/* html { height: 100%; } */
+body{
+    /* overflow:auto; */
+    /* min-height: 100%; */
+    /* background-color:gainsboro; */
+    background-image: url("../assets/img/BackgroundImage.png");
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+/* @media (max-width:450px){
+    #showHide{
+        background-color:azure;
+        background-image: none;
+    }
+} */
+/* div[ng-view]{
+    height: 100vh;
+} */
+/* footer{
+    text-align: center;
+}
+.footBut{
+    margin-top: 25px;
+    margin-bottom: 25px;
+} */
+.footer {
+    position:fixed;
+    left:0px;
+    bottom:5px;
+    height:30px;
+    width:100%;
+    background:#5567ce;
+ }
+.companylogo{
+    width: 20%;
+}
+.homepage {
+    padding-top: 10%;
+    text-align: center;
+    width: 50;
+    /* background-color: gainsboro; */
+    min-height: 88vh;
+}
+.homepage h1{
+    width: 100%;
+    font-size: 24px;
+}
+.homepage h6{
+    padding-top:25px;
+    padding-bottom: 25px;
+    margin-bottom: 0;
+    width: 100%;
+    
+    font-size: 0.7em;
+    font-weight: bolder;
+}
+.homepage button{
+    width: 100%;
+    max-width: 300px;
+    height: 55px;
+    border-radius: 10px;
+}
+.inputname{
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    /* background-color:darkgray; */
+}
+.questionCard{
+    max-width: 750px;
+    margin-top: 2%;
+    border-color:dodgerblue;
+    /* color: #0072b5; */
+        
+}
+/* @media only screen and (min-width:360px)and(min-width:411){ */
+@media (max-width:900px){
+    .questionCard{
+    /* min-height: 550px; */
+    overflow-x: hidden;
+    width: unset;
+    }
+    .innerDiv label{
+        font-size: medium !important;
+    }
+    .questionSummary{
+        font-size: medium !important;
+    }
+}
+.answers input{
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    
+}
+
+
+/* .answers input:focus{
+    background-color: lemonchiffon;
+} */
+.previousButton{
+    float: left;
+    margin-top: 5%;
+}
+.nextButton{
+    float:right;
+    margin-top: 5%;
+}
+.innerDiv p{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, serif;;
+    font-size: x-large;
+    /* text-align: justify; */
+    line-height: 1;
+}
+.innerDiv label{
+    font-size: larger;
+}
+.radio{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, serif;
+    /* border: 2px solid;     */
+    text-align: left;
+}
+
+.insuranceHeading{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, serif;
+}
+
+.insuranceHeading h1{
+    color: #504e4e;
+}
+.insuranceHeading h5{
+    margin-bottom: 1%;
+    float: left;
+    color: #504e4e;
+    /* text-align: justify; */
+    
+}
+.insurance{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, serif;
+}
+.insurance p{
+    text-align: left;
+}
+.addRemove{
+   margin-left: 69.5%;
+   margin-right: 0.5%; 
+   background-color: #8bc548;
+   /* color: floralwhite;   */
+   font-family: Arial, Helvetica, sans-serif;
+}
+/* .insuranceCard{
+    background-color: #b0bdbd;
+} */
+.goToCart{
+    background-color:#0070ad;
+}
+/* .insurance button{
+    float: right;
+    width: 30%;
+} */
+
+/* .radio label{
+    font-family: 'Cormorant Garamond', serif;
+    vertical-align: top;
+} */
+/* .firstPart{
+    float: left;
+    width: 80%;
+}
+.secondPart{
+    float: right;
+    width: 20%;
+} */
+
+.details{
+    /* width: 100%; */
+    max-width: 480px;
+    margin: auto;
+  display: block;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, serif;
+}
+.details label{
+    padding: 0.5rem 0.75rem;
+}
+.details input{
+    height: calc(2.5rem + 2px)!important;
+    
+}
+
+.beneButton{
+    color: blue;
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+    width: 60px;
+    height: 60px;
+    font-size: 1em;
+}
+
+/* .side1{
+    height: 45vh;
+} */
+.bene{
+    max-width: 50rem;
+    background-color: transparent; 
+    margin: 0 auto;
+  
+  position: relative;
+  /* margin-left: 5px;
+  margin-right: 5px; */
+  /* transform: translate(-50%, -50%); */
+    
+}
+
+/* #navbar_top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+} */
+
+/* sidebar */
+/* .slideNav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: azure;
+    opacity: .9;
+    overflow-x: hidden;
+    padding-top: 6%;
+    transition: 0.7s;
+    overflow: hidden;
+}
+.slideNav a,h3,h5{
+    padding: 20px 30px;
+    font-size: 20px;
+} */
+
+.radioBox{
+    display:inline-block
+}
+
+.que{
+    text-align: center;
+}
+
+
+.a, .c {
+    width: 35%;
+    padding: 1rem 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: azure; */
+  }
+  
+ .a h2{
+     text-align: center;
+ } 
+ .a h5{
+     text-align: justify;
+ }
+.b{
+    width: 65%;
+}  
+  .b {
+    float: right;
+  }
+  
+  @media (max-width: 767px) {
+    .con {
+      display: flex;
+      flex-direction: column;
+    }
+    .a, .b, .c {
+      width: auto;
+    }
+    .a {
+      order: 1;
+    }
+    .b {
+      order: 2;
+    }
+    .c {
+      order: 3;
+    }
+    .details{
+        width: 90%;
+    }
+    .details2{
+        width: 90%;
+    }
+  }
+
+
+
+
+  /*  */
+  .w, .v{
+      width: 70%;
+      float:right
+  }
+  .z{
+      width: 100%;
+  }
+  .x, .y{
+      width: 30%;
+      background-color: azure;
+  }
+  .x{
+    height: 44.3vh;
+  }
+  .y{
+    height: 40.05vh;
+  }
+  .v img{
+      width: 40px;
+      /* height: 6%; */
+      /* float:right; */
+      /* margin-left: 90%; */
+      /* text-align: end; */
+  }
+  .v{
+      text-align: end;
+  }
+  .profile{
+      display: inline-block;
+      text-align: center;
+  }
+  /* .w{
+      height: 63.6vh;
+  } */
+  @media (max-width: 900px) {
+      .insuranceHeading h1{
+          font-size: x-large;
+      }
+      .insuranceHeading h5{
+          font-size: medium;
+          margin-bottom: 10px;
+      }
+      .mobileView{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px !important;
+        background-color: azure !important;
+        /* overflow: auto; */
+      }
+      .w, .y, .x, .z, .v{
+          width: auto;
+      }
+      .x{
+          order:1;
+      }
+      .x h2{
+          font-size: x-large;
+      }
+      .x h5{
+          font-size: medium;
+      }
+      .w{
+          order: 2;
+          height: 0;
+      }
+      .w li{
+          font-size: medium;
+      }
+      .z{
+          order: 4;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background-color: aliceblue;
+      }
+      .y{
+          order: 3;
+      }
+      
+      .x{
+          height: auto;
+      }
+      .w{
+          height: auto;
+      }
+      
+    
+      .tableDeleteButton{
+          font-size: x-small;
+      }
+      .benetable{
+        font-size: xx-small;
+        /* width: 650px; */
+    }
+    .page2table{
+        font-size: x-small;
+    }
+    
+    .goToCartFooter{
+        position: fixed; 
+        bottom: 0; 
+        width: 100%;
+    }
+  }
+.benetable{
+     /* display: flex;  */
+    /* width: 60%; */
+    max-width: 650px;
+    margin: auto;
+    border: 0;
+
+    
+    /* flex-basis: 500px; */
+
+}
+
+.mobileView{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 16px;
+    overflow: auto;
+}
+.zPrevButton{
+    width: 100px;
+}
+.zNextButton{
+    width: 100px;
+}
+/* .goToCartFooter{
+    position: fixed; 
+    bottom: 0; 
+    width: 100%;
+} */
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+}
+.v:hover .dropdown-content{
+    display: block;
+}
+
+
+.has-error {
+    border: solid red;
+}
+
+.has-success {
+    /* border: 1px solid #ced4da; */
+    border: solid #8bc548;
+}
+
+@media screen and (min-height:500px) and (max-width:900px) {
+    .buttonFooter{
+    
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* box-sizing: border-box; */
+        /* background-color:  #f8f9fa; */
+        /* color: white; */
+        /* text-align: center; */
+        
+    }
+    .previousButton{
+        /* float: left; */
+        margin-left: 5px;
+    }
+    .nextButton{
+        /* float:right; */
+        margin-right: 5px;
+    }
+}
+
+
+
+
+
+
+/* new page design css */
+@media (max-width: 900px){
+    .leftTop, .leftBottom, .rightMiddle, .rightTop, .rightBottom{
+        width: auto;
+    }
+    .leftTop{
+        order:1;
+    }
+    .rightTop{
+        order:2;
+    }
+    .rightMiddle{
+        order:3;
+    }
+    .leftBottom{
+        order:4;
+    }
+    .rightBottom{
+        order: 5;
+    }
+    .leftPart{
+        width: auto;
+    }
+    .rightPart{
+        width:auto;
+    }
+}

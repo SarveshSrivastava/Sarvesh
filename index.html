@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="style/app.css">
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script> -->
+    <base href="/" />
+    <title>Voluntary Benefit Enrollment</title>
+    <link rel="shortcut icon" href="assets/img/sidebar.png" type="image/x-icon">
+</head>
+
+<body ng-app="insuranceProject" ng-controller="indexCtrl">
+    <header></header>
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar_top">
+        <div class="container mainpage">
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                </ul>
+            </div>
+            <img class="navbar-brand companylogo" src="assets/img/Capgemini_201x_logo.svg">
+        </div>
+    </nav>
+
+
+    <!-- navbar end -->
+    <!-- <ng-include src="'views/mainpage.html'"></ng-include> -->
+    <div ng-view=""></div>
+
+    <!-- <ul class="nav justify-content-center footer">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: ghostwhite;">Privacy Policy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" style="color: ghostwhite;">Terms Of Use</a>
+        </li>
+    </ul> -->
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/angular-route.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/indexCtrl.js"></script>
+    <script src="scripts/components/mainpageCtrl.js"></script>
+    <script src="scripts/components/questionsCtrl.js"></script>
+    <script src="scripts/components/insuranceCtrl.js"></script>
+
+    <script src="scripts/components/showhideCtrl.js"></script>
+    <script src="services/insuranceService.js"></script>
+</body>
+
+</html>

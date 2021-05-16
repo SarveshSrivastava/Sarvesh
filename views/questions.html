@@ -1,0 +1,207 @@
+<div ng-controller="questionsCtrl" class="card container questionCard">
+    <div class="card-body">
+        <p ng-model="page" style="text-align: center;">{{page}} of 8</p>
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+            data-bs-interval="false">
+            <div class="carousel-inner innerDiv">
+                <div class="carousel-item active que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>How old are you?</p>
+                    <div class="answers">
+                        <input id="age" type="text" name="question1" ng-model="ans1" ng-keyup="EnableDisable()"
+                            maxlength="2" autocomplete="off">
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>What's your marital status?</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="married" name="question2" value="married" ng-model="ans2"
+                                ng-change="newValue('married')">
+                            <label for="married">Married</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="single" name="question2" value="single" ng-model="ans2"
+                                ng-change="newValue('single')">
+                            <label for="single">Single</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="divorced" name="question2" value="divorced" ng-model="ans2"
+                                ng-change="newValue('divorced')">
+                            <label for="divorced">Divorced</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="widowed" name="question2" value="widowed" ng-model="ans2"
+                                ng-change="newValue('widowed')">
+                            <label for="widowed">Widowed</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>How many children do you have?</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="zero" name="question3" value="0" ng-model="ans3"
+                                ng-change="newValue('0')">
+                            <label for="zero">0</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="one" name="question3" value="1" ng-model="ans3"
+                                ng-change="newValue('1')">
+                            <label for="one">1</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="two" name="question3" value="2" ng-model="ans3"
+                                ng-change="newValue('2')">
+                            <label for="two">2</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="three" name="question3" value="3" ng-model="ans3"
+                                ng-change="newValue('3')">
+                            <label for="three">3</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="fourOrMore" name="question3" value="4 or more" ng-model="ans3"
+                                ng-change="newValue('4 or more')">
+                            <label for="fourOrMore">4 or more</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>Do you rent or own your home?</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="rent" name="question4" value="Rent" ng-model="ans4"
+                                ng-change="newValue('Rent')">
+                            <label for="rent">Rent</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="mortgage" name="question4" value="Own (with a mortgage)"
+                                ng-model="ans4" ng-change="newValue('Own (with a mortgage)')">
+                            <label for="mortgage">Own (with a mortgage)</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="paidOff" name="question4" value="Own (paid off)" ng-model="ans4"
+                                ng-change="newValue('Own (paid off)')">
+                            <label for="paidOff">Own (paid off)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>Would you consider yourself:</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="adventure" name="question5" value="An adventure seeker"
+                                ng-model="ans5" ng-change="newValue('An adventure seeker')">
+                            <label for="adventure">An adventure seeker</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="recreational" name="question5"
+                                value="Involved in recreational activities" ng-model="ans5"
+                                ng-change="newValue('Involved in recreational activities')">
+                            <label for="recreational">Involved in recreational activities</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="careful" name="question5" value="Careful" ng-model="ans5"
+                                ng-change="newValue('Careful')">
+                            <label for="careful">Careful</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="accident" name="question5" value="Accident prone" ng-model="ans5"
+                                ng-change="newValue('Accident prone')">
+                            <label for="accident">Accident prone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>If you were hospitalized for some injury or illness, your health plan will have</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="health" name="question6" style="display: inline;"
+                                value="No effect, don't have a health plan" ng-model="ans6"
+                                ng-change="newValue('No effect, don't have a health plan')">
+                            <label for="health" style="display: inline;">No effect, don't have a health plan</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="high" name="question6" style="display: inline;"
+                                value="High out-of-pocket expenses" ng-model="ans6"
+                                ng-change="newValue('High out-of-pocket expenses')">
+                            <label for="high" style="display: inline;">High out-of-pocket
+                                expenses</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="some" name="question6" style="display: inline;"
+                                value="Some out-of-pocket expenses" ng-model="ans6"
+                                ng-change="newValue('Some out-of-pocket expenses')">
+                            <label for="some" style="display: inline;">Some out-of-pocket
+                                expenses</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="minimal" name="question6" style="display: inline;"
+                                value="Minimal expenses as it is comprehensive" ng-model="ans6"
+                                ng-change="newValue('Minimal expenses as it is comprehensive')">
+                            <label for="minimal" style="display: inline;">Minimal expenses as it is comprehensive</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p>Has anyone in your family suffered a serious illness like diabetes, heart disease, cancer,
+                        stroke or received a major organ transplant?</p>
+                    <div class="radioBox">
+                        <div class="radio">
+                            <input type="radio" id="yes" name="question7" value="Yes" ng-model="ans7"
+                                ng-change="newValue('Yes')">
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="no" name="question7" value="No" ng-model="ans7"
+                                ng-change="newValue('No')">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  que">
+                    <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                    <p class="summary">Summary</p>
+                    <div>
+                        <p class="questionSummary" ng-model="fullname">{{fullname}}, you are</p>
+                        <p class="questionSummary">{{ans1}} years old</p>
+                        <p class="questionSummary">{{ans2}}</p>
+                        <p class="questionSummary">with {{ans3}} children</p>
+                        <p class="questionSummary">{{ans4}} a house</p>
+                        <p class="questionSummary">{{ans5}}</p>
+                        <p class="questionSummary">And in case of hospitalization, your health plan has {{ans6}}</p>
+                        <!-- <p>{{ans7}}</p> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button> -->
+            <div class="buttonFooter">
+                <button type="button" id="previous" class="btn btn-primary previousButton"
+                    data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" ng-click="previousButton()"
+                    ng-disabled="previousIsDisabled" style="float: left; width: 100px;">Previous</button>
+                <button type="button" id="next" class="btn btn-primary nextButton"
+                    data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" ng-click="nextButton()"
+                    ng-disabled="nextIsDisabled" style="float: right; width: 100px;">Next</button>
+            </div>
+
+
+            <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                data-bs-slide ="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+        </div>
+    </div>
+</div>

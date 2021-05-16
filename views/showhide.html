@@ -1,0 +1,260 @@
+<div ng-controller="showhideCtrl" data-ng-init="init()">
+    <div class="container mobileView">
+        <div class="v mt-1 mb-1">
+            <div class="profile">
+                <img src="../assets/img/user-circle-solid.svg" alt="user image">
+                <!-- <br> -->
+                <!-- <div class="dropdown-content"> -->
+                <p style="margin-bottom: 0px; font-size: small;" ng-model="custName"><strong>{{custName}}</strong>
+                </p>
+                <!-- <p style="margin-bottom: 0px; font-size: small;">29-12-1997</p> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="w" ng-form="myForm" ng-show="detailsForm">
+            <div class="details form-floating mb-3 mt-3">
+                <input
+                    ng-class="{'has-error': myForm.fullname.$touched && myForm.fullname.$error.required, 'has-success': myForm.fullname.$valid }"
+                    type="text" class="form-control" id="fullname" placeholder="Enter your name" name="fullname"
+                    ng-model="fullname" ng-change="inputValue()" required>
+                <label for="fullname">Full Name</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.email.$touched && myForm.email.$error.required, 'has-success': myForm.email.$valid }"
+                    type="email" class="form-control" id="email" placeholder="Enter your email" name="email"
+                    ng-model="email" ng-change="inputValue()" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.organization.$touched && myForm.organization.$error.required, 'has-success': myForm.organization.$valid }"
+                    type="text" class="form-control" id="organization" name="organization" ng-change="inputValue()"
+                    placeholder="Enter name of your organization" ng-model="organization" required>
+                <label for="organization">Organization</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.empId.$touched && myForm.empId.$error.required, 'has-success': myForm.empId.$valid }"
+                    type="text" class="form-control" id="empId" placeholder="Enter your employee id" name="empId"
+                    ng-model="empId" ng-change="inputValue()" required>
+                <label for="empId">Employee Id</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.dob.$touched && myForm.dob.$error.required, 'has-success': myForm.dob.$valid }"
+                    type="date" class="form-control" id="dob" placeholder="" name="dob" ng-model="dob"
+                    ng-change="inputValue()" style="padding: 16px 12px 10px;" required>
+                <label for="dob">Date Of Birth</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.joiningDate.$touched && myForm.joiningDate.$error.required, 'has-success': myForm.joiningDate.$valid }"
+                    type="date" class="form-control" id="joiningDate" name="joiningDate"
+                    style="padding: 16px 12px 10px;" placeholder="" ng-change="inputValue()" ng-model="joiningDate"
+                    required>
+                <label for="joiningDate">Joining Date</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.grade.$touched && myForm.grade.$error.required, 'has-success': myForm.grade.$valid }"
+                    type="text" class="form-control" id="grade" name="grade" placeholder="Enter your grade"
+                    ng-model="grade" ng-change="inputValue()" required>
+                <label for="grade">Grade</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input
+                    ng-class="{'has-error': myForm.address.$touched && myForm.address.$error.required, 'has-success': myForm.address.$valid }"
+                    type="text" class="form-control" id="address" name="address" placeholder="Enter your address"
+                    ng-change="inputValue()" ng-model="address" required>
+                <label for="address">Address</label>
+            </div>
+        </div>
+        <div class="w" ng-show="beneficiaryTable">
+
+            <div class="card benetable mb-3">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary"
+                    style="align-self: flex-end;">
+                    Add Beneficiary
+                </button>
+                <table class="table table-striped table-hover mt-3">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Beneficiary Name</th>
+                        <th>Relation</th>
+                        <th>Date Of Birth</th>
+                        <th>Percentage</th>
+                        <th>Remove</th>
+                    </thead>
+                    <tr ng-repeat="bene in beneficiary">
+                        <td>{{$index+1}}</td>
+                        <td>{{bene.beneName}}</td>
+                        <td>{{bene.beneRelation}}</td>
+                        <td>{{bene.beneDob | date}}</td>
+                        <td>{{bene.benePercentage}}%</td>
+                        <td ng-click="beneficiary.splice($index, 1)"><button type="button"
+                                class="btn btn-danger tableDeleteButton">X</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="w" ng-show="note">
+            <h4>Note:</h4>
+            <ul>
+                <li>All premium are inclusive of GST.</li>
+                <li><strong>"Submit and Pay now"</strong>:- Please note that your choice for voluntary plan is
+                    final. If
+                    Yes please press <strong>Confirm</strong> or <strong>Cancel</strong> to continue to
+                    edit.</strong>
+                </li>
+                <li>To complete enrollment please click on <strong>"Submit and Pay now"</strong> within the
+                    enrollment
+                    window.</li>
+            </ul>
+        </div>
+        <div class="w" ng-show="cardPayment">
+            <div class="details form-floating mb-3">
+                <input type="text" class="form-control" id="cardNumber" placeholder="Enter your Card Number">
+                <label for="cardNumber">Card Number</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input type="text" class="form-control" id="expiryDate" placeholder="Enter your Expiry Date">
+                <label for="expiryDate">Expiry Date</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input type="text" class="form-control" id="cvv" placeholder="Enter your CVV">
+                <label for="cvv">CVV</label>
+            </div>
+            <div class="details form-floating mb-3">
+                <input type="text" class="form-control" id="cardHolderName" placeholder="Enter the name on your card">
+                <label for="cardHolderName">Name Of Card Holder</label>
+            </div>
+        </div>
+
+        <div class="x mt-1" ng-show="accidentInfo">
+            <h2>Accidental Insurance</h2>
+            <h5>
+                Accident insurance can help offset costs that are not covered by your medical plan. The benefit is
+                paid
+                directly to you and can be used for out-of-pocket costs like co-pays, deductibles and other
+                expenses.
+            </h5>
+        </div>
+        <div class="x page2table" ng-show="page2table1">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th></th>
+                    <th>Sum Insured</th>
+                    <th>Premium</th>
+                </thead>
+                <tr>
+                    <td>Accident Insurance Policy</td>
+                    <td>$50000</td>
+                    <td>$450</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total Premium to be paid</td>
+                    <td>$450</td>
+                </tr>
+            </table>
+            <p><strong>Note:</strong>All premiums are inclusive of GST</p>
+        </div>
+        <!-- <div class="x mt-1" ng-show="paymentInfo">
+            <h2>Payment Details</h2>
+            <h5>
+                Once online payment is madefor top Up policy and/or COVID policy, cancellation or modification is
+                <strong>NOT</strong> allowed.
+            </h5>
+        </div> -->
+
+        <div class="y page2table" ng-show="page2table">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <th></th>
+                    <th>Sum Insured</th>
+                    <th>Premium</th>
+                </thead>
+                <tr>
+                    <td>Accident Insurance Policy</td>
+                    <td>$50000</td>
+                    <td>$450</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total Premium to be paid</td>
+                    <td>$450</td>
+                </tr>
+            </table>
+            <p><strong>Note:</strong>All premiums are inclusive of GST</p>
+        </div>
+        <div class="y" ng-show="pageImg">
+            <img class="" style="width: 100%;" src="../assets/img/sidebar.png" alt="image">
+        </div>
+    </div>
+    <div class="z" id="z">
+        <div class="zButton">
+            <button type="button" class="btn btn-primary zPrevButton" style="float: left;" ng-click="previousPage()"
+                ng-model="previousButton">{{previousButton}}</button>
+            <button type="button" class="btn btn-primary zNextButton" style="float: right;" ng-click="nextPage()"
+                ng-model="nextButton">{{nextButton}}</button>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Beneficiary Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="beneFullName" name="beneFullName"
+                            placeholder="Full Name" ng-model="bene.name" ng-change="inputBeneValue()" required>
+                    </div>
+                    <div class="mb-3">
+                        <select id="beneRelation" name="beneRelation" class="form-select" ng-change="inputBeneValue()"
+                            ng-model="bene.relation" ng-options="rel as rel.name for rel in beneRelations" required>
+                            <option value="">Relation</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="benedob" name="benedob" placeholder="Date Of Birth"
+                            ng-model="bene.dob" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'"
+                            ng-change="inputBeneValue()" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="benePercentage" name="benePercentage"
+                            placeholder="Percentage" ng-model="bene.percentage" ng-change="inputBeneValue()" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        ng-click="closePopUp()">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" ng-click="addBene(bene)"
+                        ng-disabled="addBeneButton">Save
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full screen modal -->
+    <div class="modal" tabindex="-1" id="PaymentModal">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Payment Status</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" ng-click="homePage()" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+              <p ng-model="transactionNumber">Payment Successful Transaction Number #{{transactionNumber}}</p>
+              <img src="../assets/img/Payment Success.png" alt="Payment Status Image">
+              <h2>Thank you for enrolling in the Voluntary Group Insurance!</h2>
+              <p>We will be sending you the related documents shortly</p>
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" ng-click="homePage()">Go To Home</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
